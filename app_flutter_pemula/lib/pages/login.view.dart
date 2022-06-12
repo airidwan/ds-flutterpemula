@@ -54,6 +54,8 @@ class _LoginViewState extends State<LoginView> {
           reverse: true,
           child: Column(
             children: <Widget>[
+             'DICODING APPS'.text.bold.size(20).make(),
+              10.heightBox,
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
@@ -70,30 +72,31 @@ class _LoginViewState extends State<LoginView> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    Text(
-                      'LOGIN',
-                      style: TextStyle(color: Colors.blue, fontSize: 24, fontWeight: FontWeight.w500),
-                    ),
-                    Text(
-                      'DICODING APPS',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                    ),
+                    // Text(
+                    //   'LOGIN',
+                    //   style: TextStyle(color: Colors.blue, fontSize: 24, fontWeight: FontWeight.w500),
+                    // ),
+
                     25.heightBox,
                     _textInput(userNameController, hintText: 'Username', onchanged: (value) => onTextChanged(value)),
                     16.heightBox,
-                    _textInput(passwordController, hintText: 'Password', onchanged: (value) => onTextChanged(value)),
+                    _textInput(passwordController, hintText: 'Password',obscureText: true, onchanged: (value) => onTextChanged(value)),
                     20.heightBox,
-                    ElevatedButton.icon(
-                      onPressed: !buttonEnable
-                          ? null
-                          : () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Dicoding Course')),
-                              );
-                            },
-                      icon: Icon(Icons.system_update_alt_sharp, size: 18),
-                      label: Text("L O G I N"),
+                    SizedBox(
+                      height: 50,
+                      width: 250,
+                      child: ElevatedButton.icon(
+                        onPressed: !buttonEnable
+                            ? null
+                            : () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Dicoding Course')),
+                                );
+                              },
+                        icon: Icon(Icons.system_update_alt_sharp, size: 18),
+                        label: Text("L O G I N"),
+                      ),
                     )
                   ],
                 ),
