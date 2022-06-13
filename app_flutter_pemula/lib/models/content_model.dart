@@ -46,7 +46,7 @@ final itemsProgramBy = <ContentModel>[
     note: 'Oleh Indosat Ooredoo Hutchison',
     title: 'Beasiswa IDCamp 2022',
     imageUrl: Assets.images.dByIsat.path,
-    description: 'IDCamp adalah program beasiswa dari Indosat Ooredoo Hutchison untuk mencetak developer Indonesia. Tersedia 8 opsi alur belajar. Daftarkan dirimu sekarang!',
+    description: 'IDCamp adalah program beasiswa dari Indosat Ooredoo Hutchison untuk mencetak developer Indonesia. Tersedia 8 opsi alur belajar. Daftarkan dirimu sekarang! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
   ),
   ContentModel(
     note: 'Oleh Snapchat',
@@ -70,7 +70,7 @@ final itemsProgramBy = <ContentModel>[
     note: 'Oleh Google, GoTo, Traveloka, Kemdikbudristek',
     title: 'Bangkit Academy 2022',
     imageUrl: Assets.images.dBangkit.path,
-    description: '',
+    description: 'Program kesiapan karier terafiliasi Kampus Merdeka. Melatih mahasiswa agar memiliki keterampilan relevan untuk karier sukses di perusahaan teknologi terkemuka.',
   ),
 ];
 final learningPathCategories = <ContentModel>[

@@ -2,7 +2,7 @@
 // ignore: prefer_const_literals_to_create_immutables
 
 import 'package:app_flutter_pemula/data/constants/assets.gen.dart';
-import 'package:app_flutter_pemula/pages/home.view.dart';
+import 'package:app_flutter_pemula/pages/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -31,7 +31,6 @@ class _LoginViewState extends State<LoginView> {
     super.dispose();
   }
 
-  // bool get buttonEnable => (userNameController.text.isNotEmpty && passwordController.text.isNotEmpty);
   bool buttonEnable = false;
 
   void onTextChanged(String value) {
@@ -54,7 +53,7 @@ class _LoginViewState extends State<LoginView> {
           reverse: true,
           child: Column(
             children: <Widget>[
-             'DICODING APPS'.text.bold.size(20).make(),
+              'DICODING APPS'.text.bold.size(20).make(),
               10.heightBox,
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
@@ -72,15 +71,10 @@ class _LoginViewState extends State<LoginView> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    // Text(
-                    //   'LOGIN',
-                    //   style: TextStyle(color: Colors.blue, fontSize: 24, fontWeight: FontWeight.w500),
-                    // ),
-
-                    25.heightBox,
-                    _textInput(userNameController, hintText: 'Username', onchanged: (value) => onTextChanged(value)),
+                     25.heightBox,
+                    TextInputWidget(txtController: userNameController, hintText: 'Username', onchanged: (value) => onTextChanged(value)),
                     16.heightBox,
-                    _textInput(passwordController, hintText: 'Password',obscureText: true, onchanged: (value) => onTextChanged(value)),
+                    TextInputWidget(txtController: passwordController, hintText: 'Password', obscureText: true, onchanged: (value) => onTextChanged(value)),
                     20.heightBox,
                     SizedBox(
                       height: 50,
@@ -91,7 +85,7 @@ class _LoginViewState extends State<LoginView> {
                             : () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Dicoding Course')),
+                                  MaterialPageRoute(builder: (context) => const HomeView(title: 'Dicoding Course')),
                                 );
                               },
                         icon: Icon(Icons.system_update_alt_sharp, size: 18),
@@ -107,8 +101,17 @@ class _LoginViewState extends State<LoginView> {
       ),
     );
   }
+}
 
-  Widget _textInput(TextEditingController txtController, {String? hintText, bool obscureText = false, ValueChanged<String>? onchanged}) {
+class TextInputWidget extends StatelessWidget {
+  final TextEditingController txtController;
+  final String? hintText;
+  final bool obscureText;
+  final ValueChanged<String>? onchanged;
+  const TextInputWidget({Key? key, required this.txtController, this.hintText, this.obscureText = false, this.onchanged}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints.tightFor(height: 45, width: 300),
       child: TextField(

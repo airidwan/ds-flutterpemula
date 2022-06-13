@@ -1,36 +1,24 @@
 import 'package:app_flutter_pemula/data/constants/assets.gen.dart';
-import 'package:app_flutter_pemula/models/content.model.dart';
-import 'package:app_flutter_pemula/pages/learningpath.view.dart';
+import 'package:app_flutter_pemula/models/content_model.dart';
+import 'package:app_flutter_pemula/pages/learningpath_view.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
+class HomeView extends StatelessWidget {
   final String title;
+  const HomeView({Key? key, required this.title}) : super(key: key);
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
         leadingWidth: 40,
         titleSpacing: 5,
-        // leading: IconButton(
-        //   icon: Assets.icon.image(),
-        //   onPressed: () { },
-        // ),
         leading: CircleAvatar(
           child: Assets.icon.image(),
         ),
-        // centerTitle: true,
       ),
       body: _buildBody(context),
     );
@@ -70,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: size.width * .35,
                     child: ElevatedButton(
                       // style: const ButtonStyle(),
-                       style: ElevatedButton.styleFrom(tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                      style: ElevatedButton.styleFrom(tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -123,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: 'Bekerja sama dengan partner, kami menyelenggarakan beberapa program untuk mendukung developer Indonesia.'.text.sm.make().px(10),
           ),
           SizedBox(
-            height: 140,
+            height: size.height * .15,
             width: size.width * .95,
             child: ListView.builder(
               physics: const ClampingScrollPhysics(),
@@ -160,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 1.5.heightBox,
                                 item.title.text.sm.semiBold.make(),
                                 1.5.heightBox,
-                                item.description.text.overflow(TextOverflow.clip).xs.make(),
+                                item.description.text.overflow(TextOverflow.clip).maxLines(5).xs.make(),
                               ],
                             ),
                           ),
@@ -180,4 +168,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-

@@ -1,4 +1,4 @@
-import 'package:app_flutter_pemula/models/content.model.dart';
+import 'package:app_flutter_pemula/models/content_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -49,7 +49,7 @@ class _LearningclassViewState extends State<LearningclassView> {
                   children: [
                     _buildTitleIcon(
                       FontAwesomeIcons.solidClock,
-                      item.level,
+                      item.duration,
                       color: const Color(0xFF44dcd0),
                     ),
                     10.widthBox,
