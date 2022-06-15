@@ -3,22 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class LearningclassView extends StatefulWidget {
+
+
+class LearningclassView extends StatelessWidget {
   final String title;
   final List<ContentModel> listItems;
   const LearningclassView({Key? key, this.title = '', required this.listItems}) : super(key: key);
-
-  @override
-  State<LearningclassView> createState() => _LearningclassViewState();
-}
-
-class _LearningclassViewState extends State<LearningclassView> {
   @override
   Widget build(BuildContext context) {
-    final listItems = widget.listItems;
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: ListView.builder(
         itemCount: listItems.length,

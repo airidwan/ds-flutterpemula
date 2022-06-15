@@ -71,7 +71,7 @@ class _LoginViewState extends State<LoginView> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                     25.heightBox,
+                    25.heightBox,
                     TextInputWidget(txtController: userNameController, hintText: 'Username', onchanged: (value) => onTextChanged(value)),
                     16.heightBox,
                     TextInputWidget(txtController: passwordController, hintText: 'Password', obscureText: true, onchanged: (value) => onTextChanged(value)),
@@ -83,10 +83,7 @@ class _LoginViewState extends State<LoginView> {
                         onPressed: !buttonEnable
                             ? null
                             : () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => const HomeView(title: 'Dicoding Course')),
-                                );
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeView(title: 'Dicoding Course')));
                               },
                         icon: Icon(Icons.system_update_alt_sharp, size: 18),
                         label: Text("L O G I N"),

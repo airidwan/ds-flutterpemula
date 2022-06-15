@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context) {
-    var size = MediaQuery.of(context).size; //thi
+    var size = MediaQuery.of(context).size; 
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -99,7 +99,6 @@ class HomeView extends StatelessWidget {
                         fit: BoxFit.fitWidth,
                       ),
                     ),
-                    // child: _trustedList[index].image(),
                   );
                 }),
           ),
@@ -148,7 +147,7 @@ class HomeView extends StatelessWidget {
                                 1.5.heightBox,
                                 item.title.text.sm.semiBold.make(),
                                 1.5.heightBox,
-                                item.description.text.overflow(TextOverflow.clip).maxLines(5).xs.make(),
+                                item.description.text.overflow(TextOverflow.clip).xs.make().expand(),
                               ],
                             ),
                           ),
@@ -160,8 +159,6 @@ class HomeView extends StatelessWidget {
               },
             ),
           ),
-          // 5.heightBox,
-
           100.heightBox,
         ],
       ),
